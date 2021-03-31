@@ -44,13 +44,8 @@ function pigLatin(phrase) {
       }
     }
 
-    console.log("phraseArray:", phraseArray)
     const phraseString = phraseArray.join("");
-    console.log("phraseString:", phraseString)
-
-    console.log("endConsonants:", endConsonants)
     const endConsonantsString = endConsonants.join("");
-    console.log("endConsonantsString:", endConsonantsString)
 
     pigLatinPhrase += phraseString + endConsonantsString;
     pigLatinPhrase += "ay";
@@ -63,6 +58,10 @@ function pigLatin(phrase) {
 
 
 // UI Logic
-
-
-
+$(document).ready(function() {
+  $(".btn").click(function() {
+    const val = $(".input").val();
+    const pig = pigLatin(val)
+    $(".result").text(pig)
+  })
+})
