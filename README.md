@@ -17,14 +17,20 @@
 1. Please open a pull request if you have any issues!
 ---
 
-#### Behavior/What It Does
-* For words beginning with a vowel, add "way" to the end.
-* For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
-* If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
-* For words beginning with "y", treat "y" as a consonant.
----
+#### Specification
+* pigLatin function takes in a string called phrase
+* pigLatin function looks at the string for one or more words
+* pigLatin function looks at each word to transform it into Pig Latin
+* pigLatin transforms each word into Pig Latin by:
+  * For words beginning with a vowel, add "way" to the end.
+  * For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
+  * If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
+  * For words beginning with "y", treat "y" as a consonant.
+* pigLatin combines the transformed words into a phrase
+* pigLatin returns the phrase to the caller
 
-#### Test Specifications
+---
+#### Test Suite
 Describe: pigLatin()
 
   Test: "It will add 'way' to the end of words that begin with a vowel."
