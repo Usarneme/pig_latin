@@ -36,7 +36,12 @@ function pigLatin(phrase) {
     const phraseArray = phrase.split("");
 
     while (phraseArray.length > 0 && !isVowel(phraseArray[0])) {
-      endConsonants.push(phraseArray.shift())
+      if (phraseArray[0] === "q" && phraseArray[1] && phraseArray[1] === "u") {
+        endConsonants.push(phraseArray.shift())
+        endConsonants.push(phraseArray.shift())
+      } else {
+        endConsonants.push(phraseArray.shift())
+      }
     }
 
     console.log("phraseArray:", phraseArray)

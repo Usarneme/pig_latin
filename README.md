@@ -53,4 +53,6 @@ Describe: pigLatin()
   Code: pigLatin("yodel")
   Expected Output: "odelyay"
 
-  
+  Test: If the first consonants include "qu", move the "u" along with the "q".
+  Code: pigLatin("quest")
+  Expected Output: "estquay"
