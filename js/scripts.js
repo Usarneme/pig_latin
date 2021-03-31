@@ -16,18 +16,24 @@ function isFirstLetterVowel(word) {
   }
 }
 
-
 // Business Logic
+
+// "ba"
 function pigLatin(phrase) {
   let pigLatinPhrase = "";
 
-  if (isVowel(phrase)) {
+  // isFirstLetterVowel"ba") => false
+  if (isFirstLetterVowel(phrase)) {
     pigLatinPhrase = phrase.concat("way");
+  } else {
+    pigLatinPhrase = phrase.slice(1);
+    // pigLatinPhrase = "a"
+    pigLatinPhrase += phrase.slice(0,1)
+    // pigLatinPhrase = "ab"
   }
 
   return pigLatinPhrase;
 }
-
 
 
 

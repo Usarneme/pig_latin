@@ -36,3 +36,16 @@ Describe: pigLatin()
   Test: "It will add 'way' to the end of words that begin with a vowel."
   Code: pigLatin("a");
   Expected Output: "away"
+
+  Test: "It will move the first consonant to the end"
+  Code: pigLatin("ba")
+  Expected Output: "ab"
+
+  Test: "It will move the first consecutive consonants to the end"
+  Code: pigLatin("ba")
+  Expected Output: "ab"
+
+  Test: "It will move the first consecutive consonants to the end and add 'ay'"
+  Code: pigLatin("ba")
+  Expected Output: "abay"
+
