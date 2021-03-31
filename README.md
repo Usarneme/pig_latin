@@ -24,8 +24,8 @@
 * pigLatin transforms each word into Pig Latin by:
   * For words beginning with a vowel, add "way" to the end.
   * For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
-  * If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
   * For words beginning with "y", treat "y" as a consonant.
+  * If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
 * pigLatin combines the transformed words into a phrase
 * pigLatin returns the phrase to the caller
 
@@ -49,3 +49,8 @@ Describe: pigLatin()
   Code: pigLatin("ba")
   Expected Output: "abay"
 
+  Test: For words beginning with "y", treat "y" as a consonant.
+  Code: pigLatin("yodel")
+  Expected Output: "odelyay"
+
+  
