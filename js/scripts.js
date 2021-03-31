@@ -28,56 +28,27 @@ function isFirstLetterVowel(word) {
 // Business Logic
 function pigLatin(phrase) {
   let pigLatinPhrase = "";
-  
-  
+
   if (isFirstLetterVowel(phrase)) {
     pigLatinPhrase = phrase.concat("way");
   } else {
-    
     let endConsonants = [];
     const phraseArray = phrase.split("");
-    // phraseArray:
-    // "bcd" => ["b","c","d","a"]
-    // ["c","d","a"]
-    // ["d","a"]
-    // ["a"]
+
     while (phraseArray.length > 0 && !isVowel(phraseArray[0])) {
       endConsonants.push(phraseArray.shift())
     }
-    // endConsonants = ["b","c","d"]
-    // phraseArray = ["a"]
 
-    const phraseString = phraseArray.join();
-    // => "a"
+    console.log("phraseArray:", phraseArray)
+    const phraseString = phraseArray.join("");
+    console.log("phraseString:", phraseString)
 
-    const endConsonantsString = endConsonants.join();
-    // => "bcd"
+    console.log("endConsonants:", endConsonants)
+    const endConsonantsString = endConsonants.join("");
+    console.log("endConsonantsString:", endConsonantsString)
 
     pigLatinPhrase += phraseString + endConsonantsString;
-    // => "abcd"
-
-    // let indexOfFirstVowel;
-
-    // for (let index = 0; index < phrase.length; index += 1) {
-    //   // if the letter at this index in the prhase is a vowel,
-    //   // then we update the indexOfFirstVowel variable
-    //   if (isVowel(phrase[index])) {
-    //     indexOfFirstVowel = index;
-    //     break;
-    //   }
-    // }
-    // now we know where the first vowel is in the phrase
-
-    // store all of the phrase AFTER the first vowel
-    // pigLatinPhrase = phrase.slice(indexOfFirstVowel);
-    // append/tack on the rest of the phrase
-    // pigLatinPhrase += phrase.slice(0, indexOfFirstVowel);
-
-    // here we have teh consonants moved to the end
-    // now we want to add 'ay'
     pigLatinPhrase += "ay";
-    // pigLatinPhrase = pigLatinPhrase.concat("ay")
-    // pigLatinPhrase = pigLatinPhrase + "ay"
   }
 
   return pigLatinPhrase;
