@@ -1,0 +1,3 @@
+function pigLatin() {
+  return "ok!"
+}
