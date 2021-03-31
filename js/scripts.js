@@ -17,8 +17,6 @@ function isFirstLetterVowel(word) {
 }
 
 // Business Logic
-
-// "bbba"
 function pigLatin(phrase) {
   let pigLatinPhrase = "";
 
@@ -27,14 +25,9 @@ function pigLatin(phrase) {
   } else {
     let indexOfFirstVowel;
 
-    // phrase = "bbba"
     for (let index = 0; index < phrase.length; index += 1) {
       // if the letter at this index in the prhase is a vowel,
       // then we update the indexOfFirstVowel variable
-      // index = 0, "bbba"[0] = "b"
-      // index = 1, "bbba"[1] = "b"
-      // ..
-      // index = 3, "bbba[3] = "a" DING DING DING!
       if (isVowel(phrase[index])) {
         indexOfFirstVowel = index;
         break;
@@ -46,12 +39,18 @@ function pigLatin(phrase) {
     pigLatinPhrase = phrase.slice(indexOfFirstVowel);
     // append/tack on the rest of the phrase
     pigLatinPhrase += phrase.slice(0, indexOfFirstVowel);
+
+    // here we have teh consonants moved to the end
+    // now we want to add 'ay'
+    pigLatinPhrase += "ay";
+    // pigLatinPhrase = pigLatinPhrase.concat("ay")
+    // pigLatinPhrase = pigLatinPhrase + "ay"
   }
 
   return pigLatinPhrase;
 }
 
-// "bbba" => "abbb"
+
 
 
 // UI Logic
