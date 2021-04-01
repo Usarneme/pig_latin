@@ -54,9 +54,6 @@ function pigLatin(phrase) {
   return pigLatinPhrase;
 }
 
-
-
-
 // UI Logic
 $(document).ready(function() {
   $(".btn").click(function() {
