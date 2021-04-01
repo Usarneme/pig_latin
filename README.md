@@ -1,5 +1,6 @@
-# PROJECT NAME
+# Pig Latinizer
 
+Turn a word phrase into Pig Latin!
 ## By Usarneme + Shane
 
 ---
@@ -14,7 +15,9 @@
 3. Open the index.html in your Browser of choice
 ---
 #### Known Issues:
-1. Please open a pull request if you have any issues!
+1. Only accepts as input a single word instead of a word phrase
+2. Does not work if you use capitalization anywhere
+Please open a pull request if you have any issues!
 ---
 
 #### Specification
