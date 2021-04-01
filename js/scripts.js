@@ -25,32 +25,48 @@ function isFirstLetterVowel(word) {
   }
 }
 
-// Business Logic
-function pigLatin(phrase) {
-  let pigLatinPhrase = "";
+function replacePunctuationWithSpace(text) {
+  return text.replace(/[!@#$%^&*()?,;:\.\s]+/g," ").trim()
+}
 
-  if (isFirstLetterVowel(phrase)) {
-    pigLatinPhrase = phrase.concat("way");
+// Business Logic
+function pigLatinize(word) {
+  let pigLatinWord = "";
+
+  if (isFirstLetterVowel(word)) {
+    pigLatinWord = word.concat("way");
   } else {
     let endConsonants = [];
-    const phraseArray = phrase.split("");
+    const wordArray = word.split("");
 
-    while (phraseArray.length > 0 && !isVowel(phraseArray[0])) {
-      if (phraseArray[0] === "q" && phraseArray[1] && phraseArray[1] === "u") {
-        endConsonants.push(phraseArray.shift())
-        endConsonants.push(phraseArray.shift())
+    while (wordArray.length > 0 && !isVowel(wordArray[0])) {
+      if (wordArray[0] === "q" && wordArray[1] && wordArray[1] === "u") {
+        endConsonants.push(wordArray.shift())
+        endConsonants.push(wordArray.shift())
       } else {
-        endConsonants.push(phraseArray.shift())
+        endConsonants.push(wordArray.shift())
       }
     }
 
-    const phraseString = phraseArray.join("");
+    const wordString = wordArray.join("");
     const endConsonantsString = endConsonants.join("");
 
-    pigLatinPhrase += phraseString + endConsonantsString;
-    pigLatinPhrase += "ay";
+    pigLatinWord += wordString + endConsonantsString;
+    pigLatinWord += "ay";
   }
 
+  return pigLatinWord;
+}
+
+function pigLatin(phrase) {
+  const noPunctuationPhraseArray = replacePunctuationWithSpace(phrase).split(" ");
+  const pigLatinPhraseArray = [];
+
+  while (noPunctuationPhraseArray.length > 0) {
+    pigLatinPhraseArray.push(pigLatinize(noPunctuationPhraseArray.shift()))
+  }
+
+  const pigLatinPhrase = pigLatinPhraseArray.join(" ");
   return pigLatinPhrase;
 }
 
