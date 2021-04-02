@@ -35,6 +35,7 @@ Turn a word phrase into Pig Latin!
 #### Test Suite
 Describe: pigLatin()
 
+```
   Test: "It will add 'way' to the end of words that begin with a vowel."
   Code: pigLatin("a");
   Expected Output: "away"
@@ -58,3 +59,4 @@ Describe: pigLatin()
   Test: If the first consonants include "qu", move the "u" along with the "q".
   Code: pigLatin("quest")
   Expected Output: "estquay"
+```
